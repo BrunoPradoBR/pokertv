@@ -1,0 +1,95 @@
+# All coordinates are relative (0.0-1.0) to the table window width/height.
+# Calibrated for a standard PokerStars 9-max table.
+
+hole_cards:
+  - name: hole_card1
+    x: 0.445
+    y: 0.780
+    w: 0.040
+    h: 0.070
+  - name: hole_card2
+    x: 0.490
+    y: 0.780
+    w: 0.040
+    h: 0.070
+
+community_cards:
+  - name: community1
+    x: 0.370
+    y: 0.440
+    w: 0.040
+    h: 0.070
+  - name: community2
+    x: 0.415
+    y: 0.440
+    w: 0.040
+    h: 0.070
+  - name: community3
+    x: 0.460
+    y: 0.440
+    w: 0.040
+    h: 0.070
+  - name: community4
+    x: 0.505
+    y: 0.440
+    w: 0.040
+    h: 0.070
+  - name: community5
+    x: 0.550
+    y: 0.440
+    w: 0.040
+    h: 0.070
+
+pot:
+  x: 0.455
+  y: 0.405
+  w: 0.090
+  h: 0.030
+
+seats:
+  - index: 0
+    name:  {x: 0.820, y: 0.630, w: 0.080, h: 0.020}
+    stack: {x: 0.820, y: 0.650, w: 0.080, h: 0.020}
+  - index: 1
+    name:  {x: 0.820, y: 0.390, w: 0.080, h: 0.020}
+    stack: {x: 0.820, y: 0.410, w: 0.080, h: 0.020}
+  - index: 2
+    name:  {x: 0.640, y: 0.220, w: 0.080, h: 0.020}
+    stack: {x: 0.640, y: 0.240, w: 0.080, h: 0.020}
+  - index: 3
+    name:  {x: 0.420, y: 0.160, w: 0.080, h: 0.020}
+    stack: {x: 0.420, y: 0.180, w: 0.080, h: 0.020}
+  - index: 4
+    name:  {x: 0.200, y: 0.220, w: 0.080, h: 0.020}
+    stack: {x: 0.200, y: 0.240, w: 0.080, h: 0.020}
+  - index: 5
+    name:  {x: 0.060, y: 0.390, w: 0.080, h: 0.020}
+    stack: {x: 0.060, y: 0.410, w: 0.080, h: 0.020}
+  - index: 6
+    name:  {x: 0.060, y: 0.630, w: 0.080, h: 0.020}
+    stack: {x: 0.060, y: 0.650, w: 0.080, h: 0.020}
+  - index: 7
+    name:  {x: 0.200, y: 0.790, w: 0.080, h: 0.020}
+    stack: {x: 0.200, y: 0.810, w: 0.080, h: 0.020}
+  - index: 8
+    name:  {x: 0.640, y: 0.790, w: 0.080, h: 0.020}
+    stack: {x: 0.640, y: 0.810, w: 0.080, h: 0.020}
+
+action_buttons:
+  fold:  {x: 0.360, y: 0.875, w: 0.085, h: 0.045}
+  call:  {x: 0.455, y: 0.875, w: 0.085, h: 0.045}
+  raise: {x: 0.550, y: 0.875, w: 0.085, h: 0.045}
+
+logo_template: "templates/pokerstars_logo.png"
+dealer_button_template: "templates/dealer_button.png"
+
+reference_histograms:
+  - "templates/hist_green_felt.npy"
+  - "templates/hist_blue_felt.npy"
+
+detection:
+  logo_match_threshold: 0.85
+  histogram_similarity_threshold: 0.80
+  edge_density_min: 0.005
+  edge_density_max: 0.12
+  confidence_threshold: 0.70
