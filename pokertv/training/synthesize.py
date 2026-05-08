@@ -2,9 +2,7 @@
 Synthesize training data by compositing card sprites onto background crops.
 Produces ~5000 augmented images per class in assets/training_data/<class>/.
 
-Prerequisites:
-  - assets/sprites/<card>.png  (e.g. Ac.png, Kh.png, back.png) -- 53 files
-  - assets/backgrounds/*.png or *.jpg  -- poker table crop images
+Assets are auto-generated if missing (synthetic card sprites and poker table backgrounds).
 
 Usage:
   python -m pokertv.training.synthesize
@@ -14,6 +12,8 @@ import random
 from pathlib import Path
 import cv2
 import numpy as np
+
+from pokertv.training.assets_setup import setup_assets
 
 SPRITE_DIR = Path("assets/sprites")
 BACKGROUND_DIR = Path("assets/backgrounds")
@@ -46,6 +46,7 @@ def composite(sprite: np.ndarray, background: np.ndarray) -> np.ndarray:
 
 
 def synthesize() -> None:
+    setup_assets()
     backgrounds = list(BACKGROUND_DIR.glob("*.png")) + list(BACKGROUND_DIR.glob("*.jpg"))
     if not backgrounds:
         raise FileNotFoundError(f"No background images in {BACKGROUND_DIR}")
